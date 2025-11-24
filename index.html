@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>观察者中心 | The Observer Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@200;400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              void: '#050505',
+              starlight: '#F8FAFC', // Brighter white for text
+              'void-purple': '#8B5CF6', // Brighter purple
+              'deep-sea': '#0F172A',
+              'danger': '#EF4444', // Brighter red
+              'mystic': 'rgba(139, 92, 246, 0.1)'
+            },
+            fontFamily: {
+              sans: ['"Noto Sans SC"', '"Microsoft YaHei"', 'Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              serif: ['Cinzel', 'serif'],
+            },
+            boxShadow: {
+              'glow': '0 0 25px rgba(139, 92, 246, 0.25)',
+              'glow-strong': '0 0 40px rgba(139, 92, 246, 0.4)',
+              'glow-danger': '0 0 25px rgba(239, 68, 68, 0.4)',
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #F8FAFC;
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+        font-size: 16px; /* Base font size increase */
+      }
+      
+      /* Custom Text Glow Utilities */
+      .text-glow {
+        text-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+      }
+      .text-glow-white {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      }
+      .text-glow-danger {
+        text-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(139, 92, 246, 0.3);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(139, 92, 246, 0.6);
+      }
+      
+      .glass-panel {
+        background: rgba(5, 5, 5, 0.75); /* Darker for better text contrast */
+        backdrop-filter: blur(16px); /* Stronger blur */
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "d3": "https://aistudiocdn.com/d3@^7.9.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
